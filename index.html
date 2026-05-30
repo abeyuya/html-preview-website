@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML プレビュー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>HTML プレビュー</h1>
+    <p class="app-desc">下の入力欄に HTML を貼り付けて「プレビュー」を押すと、右側にレンダリング結果が表示されます。</p>
+  </header>
+
+  <main class="app-main">
+    <section class="pane pane-input">
+      <div class="pane-toolbar">
+        <label for="html-input" class="pane-title">HTML 入力</label>
+        <button id="clear-btn" type="button" class="btn btn-ghost">クリア</button>
+      </div>
+      <textarea
+        id="html-input"
+        class="html-input"
+        spellcheck="false"
+        placeholder="<h1>Hello, world!</h1>"
+        aria-label="HTML 入力"></textarea>
+      <div class="actions">
+        <button id="preview-btn" type="button" class="btn btn-primary">プレビュー</button>
+        <button id="open-tab-btn" type="button" class="btn btn-secondary">新規タブで開く</button>
+      </div>
+    </section>
+
+    <section class="pane pane-preview">
+      <div class="pane-toolbar">
+        <span class="pane-title">プレビュー</span>
+      </div>
+      <iframe
+        id="preview-frame"
+        class="preview-frame"
+        title="プレビュー"
+        sandbox="allow-scripts allow-forms allow-popups allow-modals"></iframe>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
