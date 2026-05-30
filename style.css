@@ -1,0 +1,162 @@
+:root {
+  --bg: #f5f6f8;
+  --panel-bg: #ffffff;
+  --border: #d7dbe0;
+  --text: #1f2329;
+  --text-muted: #6b7280;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #475569;
+  --secondary-hover: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.app-header {
+  padding: 16px 20px 8px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.app-desc {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px 20px;
+  min-height: 0;
+}
+
+.pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pane-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: #fafbfc;
+}
+
+.pane-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.html-input {
+  flex: 1;
+  width: 100%;
+  resize: none;
+  border: 0;
+  padding: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  background: #fafbfc;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+.btn-ghost:hover {
+  background: #eef0f3;
+  color: var(--text);
+}
+
+.preview-frame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column;
+  }
+
+  .pane {
+    min-height: 280px;
+  }
+}
