@@ -81,6 +81,48 @@ body {
   color: var(--text-muted);
 }
 
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mode-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.mode-option {
+  display: inline-flex;
+}
+
+.mode-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mode-option span {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.mode-option + .mode-option span {
+  border-left: 1px solid var(--border);
+}
+
+.mode-option input:checked + span {
+  background: var(--primary);
+  color: #fff;
+}
+
 .html-input {
   flex: 1;
   width: 100%;
